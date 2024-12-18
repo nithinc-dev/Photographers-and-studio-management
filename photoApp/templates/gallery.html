@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="gallery-container">
+    <div class="gallery">
+        {% for i in all_images %}
+            <div class="gallery-item">
+                <img src="{% static 'images/' %}{{ i }}" alt="Photography-{{ forloop.counter }}">
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+
+{% comment %} {% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="gallery">
+    {% for i in all_images %}
+        <img src="{% static 'images/' %}{{ i }}" alt="Photography-{{ forloop.counter }}"  width="400" height="300">
+        {% comment %} <p>{{i}}</p> {% endcomment %}{% comment %}
+    {% endfor %}
+</div>
+{% endblock %} {% endcomment %}
+
+
+{% comment %} {% extends 'base.html' %}
+{% load static %}
+{% for i in all_images %}
+<img src="{% static "images/{{i}}" %}" alt="Photography- {{forloop.counter}}"/>
+{% endfor %} {% endcomment %}

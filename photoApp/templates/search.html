@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Search the Studios</h1>
+
+<div class="container "> 
+<div class="form-control">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+{% if filtered_result %}
+<h3>Search Result</h3>
+<table>
+    <tr>
+        <th>Studio</th>
+        <th>employees</th>
+        <th>services</th>
+        <th>email</th>
+        <th>address</th>
+    </tr>
+    {% for studio in filtered_result %}
+    <tr>
+        <td>{{ studio.name }}</td>
+        <td>{{ studio.employees }}</td>
+        <td>{{ studio.services.name }}</td>
+        <td><a href="mailto:{{ studio.email }}">{{ studio.email }}</a></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query={{studio.address.street}}{{studio.address.area}},{{studio.address.district}}" target="_blank">{{studio.address.street}}{{studio.address.area}},{{studio.address.district}}</a></td> 
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endif %}
+{% endblock %}
+

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% comment %} {% block css_files %}
+  <link rel="stylesheet" href="{% static "styles.css" %}" />
+  
+{% endblock %} {% endcomment %}
+{% block title %}Home - Photography{% endblock %}
+
+{% block content %}
+<div class="home-bg">
+  <div class="overlay">
+    <div class="container text-center">
+      <div class="content">
+        <h1>Welcome to PhotoHub !</h1>
+        <p>Discover Amazing Photographers and Studios. Your Ultimate Photography Directory.</p>
+        <p>At PhotoHub, we bring together the finest studios and photographers under one roof. Whether you're looking to book a session, view stunning portfolios, or register your own studio or photography services, you've come to the right place.</p>
+        
+        <div class="buttons">
+    
+            <button><a href="/gallery" color: #fff;>GALLERY</a></button>
+        </div><hr>
+        <h4>Meet Talented Photographers</h4>
+        <p>Browse through the profiles of our talented photographers. 
+            View their work, read reviews, and choose the best photographer for your needs.</p>
+            <div class="buttons">
+                <button><a href="/all_studios" color: #fff; >Studios</a></button>
+                <button><a href="/all_photo" color: #fff; >Photographers</a></button>
+            </div>
+        <hr>
+        
+        <h3>Our Services</h3>
+<h4>View Portfolios</h4>
+<p>Get inspired by the stunning portfolios of our photographers. 
+Whether it's wedding photography, fashion shoots, or artistic endeavors, 
+you'll find a showcase of exceptional talent.</p>
+<hr>
+        <br>
+<h4>Book Appointments</h4>
+<p>Easily book appointments with your chosen photographers and studios. 
+Check availability, select services, and confirm your booking with just a few clicks.</p>
+<div class="buttons">
+    <button><a href="/appoint" color: #fff;> Book Appointment Now!</a></button>
+    
+</div>
+<hr>
+        <br>
+<h3>Join the Community</h3>
+<h4>Register as a Photographer</h4>
+<p>Are you a photographer looking to showcase your work and attract clients? 
+Register with PhotoHub to create your profile, upload your portfolio, and start receiving bookings.</p>
+<div class="buttons">
+    
+    <button><a href="/photo_register" color: #fff;>Register as a Photographer!</a></button>
+</div>
+<br>
+<h4>Register Your Studio</h4>
+<p>If you own a photography studio, join PhotoHub to reach a wider audience. 
+List your services, display your best work, and manage appointments with ease.</p>
+<div class="buttons">
+    
+    <button><a href="/studio_register" color: #fff;>Register a Studio!</a></button>
+</div>
+<br>
+<h4>Get photographers and studios data</h4>
+<p>Generate pdf and csv files of photographrs and studios</p>
+<div class="buttons">
+    
+  <button><a href="/csv" color: #fff;>Generate csv</a></button>
+  <button><a href="/pdf" color: #fff;>Generate pdf</a></button>
+</div>
+
+
+        {% comment %} <div class="buttons">
+            <button><a href="/registerr" color: #fff; >Become a Donor</a></button>
+            <button><a href="/search" color: #fff; >Request Blood</a></button>
+        </div> {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+

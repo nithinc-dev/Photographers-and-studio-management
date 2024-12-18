@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Get Appointments Now!</h1>
+
+<div class="container "> 
+<div class = "form-control">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    {% for i in descriptions %}
+    {% if forloop.counter == 1 %}
+    <h5>{{ i }}</h5>
+    {% endif %}
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>ALL STUDIOS</h1>
+{% if studios %}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Employees</th>
+        <th>Services</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Address</th>
+    </tr>
+    
+    {% for studio in studios %}
+    <tr>
+        <td><a href="{%url 'detail' studio.pk%}">{{studio.name}}</a></td>
+        <td>{{studio.employees}}</td>
+        <td>
+            {% for service in studio.services.all %}
+                {{ service.name }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </td>
+        <td>{{studio.phone_num}}</td>
+        <td><a href="mailto:{{ studio.email }}">{{ studio.email }}</a></td>      
+        <td><a href="https://www.google.com/maps/search/?api=1&query={{studio.address.street}},{{studio.address.area}},{{studio.address.district}}" target="_blank">{{studio.address.street}}, {{studio.address.area}}, {{studio.address.district}}</a></td>
+    </tr>
+    {% endfor %} 
+</table>    
+{% endif %} 
+{% endblock %}
+
+
+
+{% comment %} {% extends 'base.html' %}
+{% block content %}
+<h1>ALL STUDIOS</h1>
+{% if studios %}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>employees</th>
+        <th>services</th>
+        <th>phone_num</th>
+        <th>email</th>
+        <th>address</th>
+    </tr>
+    
+ {% for studio in studios %}
+    <tr>
+     
+        <td> {{studio.name}} </td>
+        <td>{{studio.employees}}</td>
+
+        {% comment %} {%for i in studio.services.all%}
+        <td>{{studio.services.name }}</td>
+        {%endfor%} {% endcomment %}
+
+       {% comment %} <td>{{studio.services.name }}</td>
+        <td>{{studio.phone_num}}</td>
+        <td><a href="mailto:{{ studio.email }}">{{ studio.email }}</a></td>      
+        <td><a href="https://www.google.com/maps/search/?api=1&query={{studio.address.street}},{{studio.address.area}},{{studio.address.district}}" target="_blank">{{studio.address.street}},{{studio.address.area}},{{studio.address.district}}</a></td>
+    </tr>
+{% endfor %} 
+   
+</table>    
+{% endif %} 
+{% endblock %} {% endcomment %}

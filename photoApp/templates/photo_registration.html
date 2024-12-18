@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Photographer registration</h1>
+    {% comment %} <div class="overlay"> {% endcomment %}
+      
+
+<div class="container "> 
+       
+        {% comment %} <div class="content"> {% endcomment %}
+
+<div class = "form-control">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register Photographer</button>
+    </form>
+</div>
+
+
+</div>
+{% endblock %}

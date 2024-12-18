@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}All{% endblock %}
+
+{% block content %}
+<div class="home-bg">
+    <div class="overlay">
+      <div class="container text-center">
+        <div class="content">
+        <h1>Studios and Photographers Repository</h1>
+        
+        <p>Ready to explore, book, or join? 
+            Dive into the world of photography with PhotoHub. 
+            Your perfect photo experience is just a click away.</p>
+        <hr>
+        <br>
+        <h4>What We Offer</h4>
+<h4>Comprehensive Directory</h4>
+<p>Our extensive directory features a diverse range of photography studios and freelance photographers. 
+Whether you need a wedding photographer, 
+a studio for a corporate photoshoot, or an artist for your creative project, PhotoHub has you covered.</p>
+
+<h4>Easy Booking</h4>
+<p>Booking a photoshoot has never been easier. 
+With PhotoHub, you can browse through portfolios, check availability, 
+and book appointments online. Our integrated scheduling tool ensures that you can find 
+the perfect time slot for your needs.</p>
+
+<h4>Showcasing Talent</h4>
+<p>For photographers and studios, PhotoHub is the perfect platform to showcase your work. 
+Create your profile, upload your portfolio, and attract new clients. 
+Our platform helps you manage appointments and grow your business with ease.</p>
+        <h4></h4>
+        <div class="buttons">
+            <button><a href="/all_photo">View Photographers</a></button>
+            <button><a href="/all_studios">View Studios</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

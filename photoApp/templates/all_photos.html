@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>PHOTOGRAPHERS</h1>
+{% if photographers %}
+<table>
+    <tr>
+        <th>NAME</th>
+        <th>LICENSE</th>
+        <th>EXPERIENCE</th>
+        <th>PHONE</th>
+        <th>EMAIL</th>
+        <th>STUDIO</th>
+    </tr>
+   
+    {% for photographer in photographers %}
+    <tr>
+        <td><a href="/gallery"> {{photographer.name}}</a> </td>
+        <td>{{photographer.license_no}}</td>
+        <td>{{photographer.experience_in_years }}</td>
+        <td>{{photographer.phone_number}}</td>
+        <td><a href="mailto:{{ photographer.email }}">{{ photographer.email }}</a></td>
+        <td><a href='/all_studios'>{{photographer.studio.name}}</a></td>
+    </tr>
+    {% endfor %}
+   
+</table>    
+{% endif %}
+{% endblock %}
+
+
+
+{% comment %} {% extends 'base.html' %}
+
+{% block content %}
+<h1>PHOTOGRAPHERS</h1>
+{% if photographers %}
+<table>
+    <tr>
+        <th>NAME</th>
+        <th>LICENSE</th>
+        <th>EXPERIENCE</th>
+        <th>PHONE</th>
+        <th>EMAIL</th>
+        <th>STUDIO</th>
+        
+    </tr>
+    
+ {% for i in photographers  %}
+    <tr>
+     
+        <td><a href="/gallery"> {{i.name}}</a> </td>
+        <td>{{i.license_no}}</td>
+        <td>{{i.experience_in_years }}</td>
+        <td>{{i.phone_number}}</td>
+        <td><a href="mailto:{{ i.email }}">{{ i.email }}</a></td> 
+        
+
+        {%for j in photographer.studio.all%}
+        
+        <td><a href='/all_studios'>{{j.name}}</a></td>
+        {% comment %} <td><a href="https://www.google.com/maps/search/?api=1&query={{studio.address.street}} {{studio.address.area}} {{studio.address.district}}" target="_blank">{{studio.address.street}} {{studio.address.area}} {{studio.address.district}}</a></td> {% endcomment %}
+    
+      {% comment %}  {%endfor%} 
+
+         {% comment %} <td><a href='/all_studios'>{{i.studio.all}}</a></td> {% endcomment %}
+       
+   {% comment %}  </tr>
+{% endfor %} 
+   
+</table>    
+{% endif %} 
+{% endblock %}   {% endcomment %}
